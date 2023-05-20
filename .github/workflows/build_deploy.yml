@@ -1,0 +1,41 @@
+name: Test & Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: cache installed dependencies
+        uses: actions/cache@v3
+        id: get-node-modules
+        with:
+          path: node_modules
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json')}}
+      - name: install dependencies
+        if: steps.get-node-modules.outputs.cache-hit != 'true'
+        run: npm install
+      - name: build
+        run: npm run build
+      - name: upload builded folder
+        uses: actions/upload-artifact@master
+        with: 
+          name: github-pages
+          path: dist
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
+        with: 
