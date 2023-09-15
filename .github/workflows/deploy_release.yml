@@ -28,18 +28,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: get_release_file_url
-        name: Get release file
+        name: Get release file url
         run: |
           echo "released_json= $(curl -X GET --location https://api.github.com/repos/AlexKarajohn/AlexKarajohn.github.io/releases/tags/v${{inputs.RELEASE_VERSION}}  \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer ${{github.token}} \
+          -H "Authorization: Bearer ${{ github.token }} \
           -H "X-GitHub-Api-Version: 2022-11-28"  | jq --raw-output '.assets[] | select(.label=="static-files") .url' )" 
           echo "released_json=$released_json" >> "$GITHUB_OUTPUT"
-      - name: echo
+      - name: Get release file
         run: |
-          wget -O build.zip '${{steps.get_release_file_url.outputs.released_json}}' \
+          wget -O build.zip '${{ steps.get_release_file_url.outputs.released_json }}' \
             --header "Accept: application/octet-stream" \
-            --header "Authorization: Bearer ${{github.token}}"\
+            --header "Authorization: Bearer ${{ github.token }}"\
             --header "X-GitHub-Api-Version: 2022-11-28"
       - name: Unzip
         run: |
@@ -49,7 +49,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload dist repository
           path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
