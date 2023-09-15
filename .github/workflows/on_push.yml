@@ -1,0 +1,34 @@
+name: Build & Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: cache installed dependencies
+        uses: actions/cache@v3
+        id: get-node-modules
+        with:
+          path: node_modules
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json')}}
+      - name: install dependencies
+        if: steps.get-node-modules.outputs.cache-hit != 'true'
+        run: npm install
+      - name: Unit tests
+        run: npm run test:cv
+      - name: Linter
+        run: npm run lint
+      - name: Prettier
+        run: npm run prettier:check
+      - name: Build
+        run: npm run build
+      - name: semantic-release
+        run: npm run release:cut
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
