@@ -32,7 +32,7 @@ jobs:
         run: |
           echo "released_json= $(curl -X GET --location https://api.github.com/repos/AlexKarajohn/AlexKarajohn.github.io/releases/tags/v${{inputs.RELEASE_VERSION}}  \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          -H "Authorization: Bearer ${{github.token}} \
           -H "X-GitHub-Api-Version: 2022-11-28"  | jq --raw-output '.assets[] | select(.label=="static-files") .url' )" 
           echo "released_json=$released_json" >> "$GITHUB_OUTPUT"
       - name: echo
