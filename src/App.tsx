@@ -1,11 +1,5 @@
 import "./App.css";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
 
-const App = () => {
-  return <>App</>;
+export const App = () => {
+  return <div data-testid="App">App</div>;
 };
-
-export default App;
