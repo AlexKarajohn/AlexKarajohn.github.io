@@ -1,3 +1,10 @@
+## [1.3.8](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.3.7...v1.3.8) (2023-09-15)
+
+
+### Bug Fixes
+
+* **fake:** fix ([05cc427](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/05cc4278d5ac7205af10f776972468c2566489fb))
+
 ## [1.3.7](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.3.6...v1.3.7) (2023-09-15)
 
 
