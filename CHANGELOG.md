@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.0.0...v1.1.0) (2023-09-15)
+
+
+### Features
+
+* **fake:** fake ([01d7b9c](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/01d7b9c64a74aa2a2f456b358d25a70901b63e9c))
+
 # 1.0.0 (2023-09-15)
 
 
