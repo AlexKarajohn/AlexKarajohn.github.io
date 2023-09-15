@@ -29,7 +29,9 @@ jobs:
       - name: Build
         run: npm run build
       - name: Zip Built files
-        run: zip ./dist/build.zip ./dist/*
+        run: |
+          cd ./dist
+          zip ./build.zip ./*
       - name: semantic-release
         run: npm run release:cut
         env:
