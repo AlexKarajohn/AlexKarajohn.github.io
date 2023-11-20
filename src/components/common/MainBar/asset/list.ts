@@ -36,7 +36,6 @@ export const list: DrawerMenuItem[] = [
           {
             id: uuid(),
             text: "Seconds Child Second Child",
-
             children: [
               {
                 id: uuid(),
@@ -48,6 +47,11 @@ export const list: DrawerMenuItem[] = [
                 text: "Seconds Child Seconds Child Second Child",
               },
             ],
+          },
+          {
+            id: uuid(),
+            text: "Seconds Child Third Child",
+            icon: createElement(TheaterComedySharpIcon),
           },
         ],
       },
