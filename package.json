@@ -13,7 +13,7 @@
     "test": "jest",
     "test:cv": "jest --coverage",
     "test:watch": "jest --watch",
-    "cl": "npm commitlint",
+    "cl": "commitlint",
     "release:dry": "npx semantic-release --dry-run",
     "release:cut": "npx semantic-release"
   },

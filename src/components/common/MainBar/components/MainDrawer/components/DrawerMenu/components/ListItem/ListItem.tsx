@@ -13,7 +13,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 
 interface ListItemProps {
   item: DrawerMenuItem;
-  isChild?: Boolean;
+  isChild?: boolean;
 }
 
 export const ListItem: FC<ListItemProps> = ({ item, isChild }) => {
