@@ -1,5 +1,10 @@
 import "./App.css";
+import { MainBar } from "./components/common/MainBar/MainBar";
 
 export const App = () => {
-  return <div data-testid="App">This is the latest version</div>;
+  return (
+    <div>
+      <MainBar />
+    </div>
+  );
 };
