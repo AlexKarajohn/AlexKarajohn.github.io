@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.5.0...v1.6.0) (2023-11-20)
+
+
+### Features
+
+* **nav:** added navbar & menu ([583ebf2](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/583ebf236f933716d898a5238f39349db7ecdbb4))
+
 # [1.5.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.4.0...v1.5.0) (2023-09-15)
 
 
