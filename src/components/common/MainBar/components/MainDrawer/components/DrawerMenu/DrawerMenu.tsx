@@ -8,7 +8,7 @@ import { useMainBarContext } from "src/components/common/MainBar/context/utils/u
 import { ListItem } from "./components/ListItem/ListItem";
 
 export const DrawerMenu: FC = () => {
-  const { listItems, title } = useMainBarContext();
+  const { list, title } = useMainBarContext();
   return (
     <Box sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -16,8 +16,8 @@ export const DrawerMenu: FC = () => {
       </Typography>
       <Divider />
       <List>
-        {listItems.length > 0 &&
-          listItems.map((item) => <ListItem key={item.id} item={item} />)}
+        {list.length > 0 &&
+          list.map((item) => <ListItem key={item.id} item={item} />)}
       </List>
     </Box>
   );

@@ -1,6 +1,6 @@
 import AppBar from "@mui/material/AppBar";
 import { MainDrawer } from "./components/MainDrawer/MainDrawer";
-import { MainToolBar } from "./components/MainToolbar/MainToolbar";
+import { MainToolBar } from "./components/MainToolBar/MainToolBar";
 import { MainBarProvider } from "./context/MainBarProvider";
 import { menuConfiguration } from "./asset/list";
 

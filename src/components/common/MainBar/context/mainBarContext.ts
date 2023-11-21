@@ -4,7 +4,7 @@ import { DrawerMenuItem } from "src/types/types";
 interface MainBarContext {
   isDrawerOpen: boolean;
   setDrawerValue: (v: boolean) => void;
-  listItems: DrawerMenuItem[];
+  list: DrawerMenuItem[];
   title: string;
 }
 

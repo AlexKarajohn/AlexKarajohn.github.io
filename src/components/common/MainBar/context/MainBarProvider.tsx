@@ -2,7 +2,7 @@ import { FC, ReactNode, useState } from "react";
 import { DrawerMenuConfiguration } from "src/types/types";
 import { mainBarContext } from "./mainBarContext";
 
-interface MainBarContextProps {
+export interface MainBarContextProps {
   children?: ReactNode;
   menuConfiguration: DrawerMenuConfiguration;
 }
@@ -22,7 +22,7 @@ export const MainBarProvider: FC<MainBarContextProps> = ({
       value={{
         isDrawerOpen: mainDrawerState,
         setDrawerValue,
-        listItems: menuConfiguration.list,
+        list: menuConfiguration.list,
         title: menuConfiguration.title,
       }}
     >
