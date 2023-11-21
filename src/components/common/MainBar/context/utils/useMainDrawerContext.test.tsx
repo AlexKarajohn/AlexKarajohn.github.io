@@ -3,6 +3,7 @@ import * as allExportsUseMainDrawerContext from "./useMainDrawerContext";
 import { render } from "@testing-library/react";
 import { MainBarProvider } from "../MainBarProvider";
 import { Context } from "react";
+import { mockMenuConfiguration } from "../__test__/menuConfiguration";
 const mockContextTracker = jest.fn();
 
 const HelperComponent = () => {
@@ -29,7 +30,7 @@ describe("useMainDrawerContext hook", () => {
   describe("inside a provider", () => {
     it("should not throw error when within a provider", () => {
       render(
-        <MainBarProvider menuConfiguration={{ title: "", list: [] }}>
+        <MainBarProvider menuConfiguration={mockMenuConfiguration}>
           <HelperComponent />
         </MainBarProvider>,
       );
@@ -39,7 +40,7 @@ describe("useMainDrawerContext hook", () => {
       const expectedValue = "expectedContext";
       mockedUseContext.mockImplementation(() => expectedValue);
       render(
-        <MainBarProvider menuConfiguration={{ title: "", list: [] }}>
+        <MainBarProvider menuConfiguration={mockMenuConfiguration}>
           <HelperComponent />
         </MainBarProvider>,
       );
