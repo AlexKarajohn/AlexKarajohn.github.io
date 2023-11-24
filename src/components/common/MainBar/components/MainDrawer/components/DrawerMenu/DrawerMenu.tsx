@@ -5,10 +5,11 @@ import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 
 import { useMainBarContext } from "src/components/common/MainBar/context/utils/useMainDrawerContext";
-import { ListItem } from "./components/ListItem/ListItem";
+import { ListMenuItem } from "./components/ListMenuItem/ListMenuItem";
 
 export const DrawerMenu: FC = () => {
   const { list, title } = useMainBarContext();
+
   return (
     <Box sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -17,7 +18,7 @@ export const DrawerMenu: FC = () => {
       <Divider />
       <List>
         {list.length > 0 &&
-          list.map((item) => <ListItem key={item.id} item={item} />)}
+          list.map((item) => <ListMenuItem key={item.id} item={item} />)}
       </List>
     </Box>
   );

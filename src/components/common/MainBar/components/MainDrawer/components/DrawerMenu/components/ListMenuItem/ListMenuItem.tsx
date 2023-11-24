@@ -7,16 +7,23 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Collapse from "@mui/material/Collapse";
 import { useMainBarContext } from "src/components/common/MainBar/context/utils/useMainDrawerContext";
 import { FC, useState } from "react";
-import { DrawerMenuItem } from "src/types/types";
+import type { ListItem } from "src/types/types";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import { routeCreator } from "./util/routeCreator";
+import { NavLink, useMatch } from "react-router-dom";
 
-interface ListItemProps {
-  item: DrawerMenuItem;
+export interface ListMenuItemProps {
+  item: ListItem;
   isChild?: boolean;
+  parentUrl?: string;
 }
 
-export const ListItem: FC<ListItemProps> = ({ item, isChild }) => {
+export const ListMenuItem: FC<ListMenuItemProps> = ({
+  item,
+  isChild,
+  parentUrl,
+}) => {
   const { setDrawerValue } = useMainBarContext();
 
   const [open, setOpen] = useState(false);
@@ -27,35 +34,41 @@ export const ListItem: FC<ListItemProps> = ({ item, isChild }) => {
 
   const closeDrawer = () => setDrawerValue(false);
 
+  const currentPath = routeCreator(parentUrl, item.path);
+  const isActiveLink = useMatch(currentPath || "");
+  const primaryText = isActiveLink ? (
+    <b data-testid="bold-text">{item.text}</b>
+  ) : (
+    item.text
+  );
+
   return (
     <>
       <ListItemMui
         key={item.id}
         disablePadding
         sx={{ display: "flex", alignItems: "stretch", minWidth: 0 }}
-        // component={item.route ? "a" : "a"}
-        // href={item.route ? item.route : "undefined"}
       >
         <ListItemButton
-          onClick={() => {
-            closeDrawer();
-          }}
+          onClick={closeDrawer}
+          component={item.path ? NavLink : "div"}
+          to={currentPath}
           sx={{
             display: "flex",
             gap: 1,
-            paddingLeft: isChild ? 0 : undefined,
+            paddingLeft: isChild ? 1 : undefined,
             minWidth: 0,
           }}
         >
           {item.icon ? (
-            <ListItemIcon sx={{ maxWidth: "24px", minWidth: "0px" }}>
+            <ListItemIcon sx={{ maxWidth: 3, minWidth: 0 }}>
               {item.icon}
             </ListItemIcon>
           ) : (
-            <Box sx={{ minWidth: "24px" }} />
+            <Box sx={{ minWidth: 3 }} />
           )}
           <ListItemText
-            primary={item.text}
+            primary={primaryText}
             sx={{
               textWrap: "wrap",
               minWidth: 0,
@@ -71,9 +84,10 @@ export const ListItem: FC<ListItemProps> = ({ item, isChild }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              maxWidth: "50px",
-              minWidth: "50px",
+              maxWidth: 6,
+              minWidth: 6,
             }}
+            data-testid="expand"
           >
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
@@ -87,14 +101,16 @@ export const ListItem: FC<ListItemProps> = ({ item, isChild }) => {
           sx={{ paddingLeft: 0, minWidth: 0 }}
         >
           <Box display="flex" sx={{ paddingLeft: 0, minWidth: 0 }}>
-            <Divider
-              orientation="vertical"
-              flexItem
-              sx={{ minWidth: "20px" }}
-            />
+            <Divider orientation="vertical" flexItem sx={{ minWidth: 3 }} />
             <Box width="100%" sx={{ marginLeft: "0" }}>
-              {item?.children.map((item) => {
-                return <ListItem key={item.id} item={item} isChild={true} />;
+              {item.children.map((childrenItem: ListItem) => {
+                const childProps = {
+                  item: childrenItem,
+                  isChild: true,
+                  parentUrl: currentPath,
+                };
+
+                return <ListMenuItem key={childrenItem.id} {...childProps} />;
               })}
             </Box>
           </Box>
