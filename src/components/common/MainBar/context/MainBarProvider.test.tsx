@@ -3,7 +3,7 @@ import { mainBarContext } from "./mainBarContext";
 import { act, render } from "@testing-library/react";
 import { MainBarProvider } from "./MainBarProvider";
 import { mockMenuConfiguration } from "./__test__/menuConfiguration";
-import { DrawerMenuItem } from "src/types/types";
+import { ListItem } from "src/types/types";
 
 const mockContextTracker = jest.fn();
 
@@ -53,7 +53,7 @@ describe("MainBarProvider", () => {
     });
     describe("menu configuration getters", () => {
       it("list should return props.menuConfiguration.list", () => {
-        const list: DrawerMenuItem[] = [{ id: "testId", text: "test-text" }];
+        const list: ListItem[] = [{ id: "testId", text: "test-text" }];
         render(
           <MainBarProvider
             menuConfiguration={{ ...mockMenuConfiguration, list }}

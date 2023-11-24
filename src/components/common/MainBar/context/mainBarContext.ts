@@ -1,10 +1,10 @@
 import { createContext } from "react";
-import { DrawerMenuItem } from "src/types/types";
+import { ListItem } from "src/types/types";
 
 interface MainBarContext {
   isDrawerOpen: boolean;
   setDrawerValue: (v: boolean) => void;
-  list: DrawerMenuItem[];
+  list: ListItem[];
   title: string;
 }
 
