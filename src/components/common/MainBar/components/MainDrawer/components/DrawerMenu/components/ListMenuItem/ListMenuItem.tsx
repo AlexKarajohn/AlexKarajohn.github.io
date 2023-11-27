@@ -35,7 +35,8 @@ export const ListMenuItem: FC<ListMenuItemProps> = ({
   const closeDrawer = () => setDrawerValue(false);
 
   const currentPath = routeCreator(parentUrl, item.path);
-  const isActiveLink = useMatch(currentPath || "");
+  const usMatchActiveValue = useMatch(currentPath || "");
+  const isActiveLink = usMatchActiveValue && currentPath;
   const primaryText = isActiveLink ? (
     <b data-testid="bold-text">{item.text}</b>
   ) : (

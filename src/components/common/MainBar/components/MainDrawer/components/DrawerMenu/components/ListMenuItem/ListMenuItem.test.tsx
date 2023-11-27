@@ -44,12 +44,21 @@ describe("ListMenuItem", () => {
       mockUseMatch.mockReturnValueOnce(true);
       const item = listItemCreator({
         text: "parent",
+        path: "someUrl",
       });
       renderWithRouter(item, true);
       expect(screen.getByText("parent")).toBeInTheDocument();
       expect(screen.getByTestId("bold-text")).toBeInTheDocument();
     });
     it("text should not be bold if path is not active", () => {
+      mockUseMatch.mockReturnValueOnce(false);
+      const item = listItemCreator({
+        text: "parent",
+      });
+      renderWithRouter(item, true);
+      expect(screen.queryByTestId("bold-text")).not.toBeInTheDocument();
+    });
+    it("text should not be bold if there is no path", () => {
       mockUseMatch.mockReturnValueOnce(false);
       const item = listItemCreator({
         text: "parent",
