@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.7.0...v1.7.1) (2023-11-27)
+
+
+### Bug Fixes
+
+* **ListMenuItem:** fixed width size ([c188720](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/c1887207707b5b2f51e80925871a506853c96733))
+
 # [1.7.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.6.0...v1.7.0) (2023-11-27)
 
 
