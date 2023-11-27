@@ -61,11 +61,11 @@ export const ListMenuItem: FC<ListMenuItemProps> = ({
           }}
         >
           {item.icon ? (
-            <ListItemIcon sx={{ maxWidth: 3, minWidth: 0 }}>
+            <ListItemIcon sx={{ maxWidth: 3 * 8 + "px", minWidth: 0 }}>
               {item.icon}
             </ListItemIcon>
           ) : (
-            <Box sx={{ minWidth: 3 }} />
+            <Box sx={{ minWidth: 3 * 8 + "px" }} />
           )}
           <ListItemText
             primary={primaryText}
@@ -84,8 +84,8 @@ export const ListMenuItem: FC<ListMenuItemProps> = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              maxWidth: 6,
-              minWidth: 6,
+              maxWidth: 6 * 8 + "px",
+              minWidth: 6 * 8 + "px",
             }}
             data-testid="expand"
           >
@@ -101,7 +101,11 @@ export const ListMenuItem: FC<ListMenuItemProps> = ({
           sx={{ paddingLeft: 0, minWidth: 0 }}
         >
           <Box display="flex" sx={{ paddingLeft: 0, minWidth: 0 }}>
-            <Divider orientation="vertical" flexItem sx={{ minWidth: 3 }} />
+            <Divider
+              orientation="vertical"
+              flexItem
+              sx={{ minWidth: 3 * 8 + "px" }}
+            />
             <Box width="100%" sx={{ marginLeft: "0" }}>
               {item.children.map((childrenItem: ListItem) => {
                 const childProps = {
