@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.6.0...v1.7.0) (2023-11-27)
+
+
+### Features
+
+* **routing:** added routing, routes, routeCreators ([f40dded](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/f40dded5658796b383f681e53c6538af3fb38e4d))
+
 # [1.6.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.5.0...v1.6.0) (2023-11-20)
 
 
