@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.7.1...v1.7.2) (2023-11-28)
+
+
+### Bug Fixes
+
+* **ListMenuItem:** active link boldness ([db447df](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/db447dfb82c6d0f91c6b8c5e3c22a659548c128b))
+
 ## [1.7.1](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.7.0...v1.7.1) (2023-11-27)
 
 
