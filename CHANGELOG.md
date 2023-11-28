@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.7.2...v1.8.0) (2023-11-28)
+
+
+### Features
+
+* **theme:** color modes ([21174d5](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/21174d57457691f98ac9f408262464e45b9f5285))
+
 ## [1.7.2](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.7.1...v1.7.2) (2023-11-28)
 
 
