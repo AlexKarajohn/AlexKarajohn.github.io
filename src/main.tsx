@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "@mui/material";
-import { theme } from "src/theme/theme.tsx";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { list } from "./components/common/MainBar/asset/list";
 import { ListItem } from "./types/types";
+import { ThemeProvider } from "./theme/context/ThemeProvider";
 
 const addErrorElement = (item: ListItem): ListItem => {
   if (item.children) {
@@ -26,7 +26,7 @@ const router = createBrowserRouter(list.map(addErrorElement));
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <CssBaseline />
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>,

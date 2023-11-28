@@ -2,11 +2,17 @@ import { act, render, screen } from "@testing-library/react";
 import { MainToolBar } from "./MainToolBar";
 import { menuIconButtonTestId, name, title } from "./constants";
 import userEvent from "@testing-library/user-event";
+import { mockComponent } from "src/util/testing/mockComponent";
 const mockSetDrawerValue = jest.fn();
 jest.mock("../../context/utils/useMainDrawerContext", () => ({
   useMainBarContext: () => ({
     setDrawerValue: mockSetDrawerValue,
   }),
+}));
+jest.mock("./components/ColorModeSwitch/ColorModeSwitch", () => ({
+  ColorModeSwitch: () => {
+    return mockComponent({ name: "ColorModeSwitch" });
+  },
 }));
 
 describe("MainToolBar", () => {
