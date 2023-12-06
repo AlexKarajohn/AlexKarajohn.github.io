@@ -7,7 +7,7 @@ import { menuConfiguration } from "./asset/list";
 export const MainBar = () => {
   return (
     <MainBarProvider menuConfiguration={menuConfiguration}>
-      <AppBar position="static">
+      <AppBar position="sticky">
         <MainToolBar />
       </AppBar>
       <MainDrawer />

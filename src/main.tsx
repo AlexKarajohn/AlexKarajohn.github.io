@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { list } from "./components/common/MainBar/asset/list";
+import { RouteList } from "./components/common/MainBar/asset/list";
 import { ListItem } from "./types/types";
 import { ThemeProvider } from "./theme/context/ThemeProvider";
 
@@ -21,12 +21,12 @@ const addErrorElement = (item: ListItem): ListItem => {
   };
 };
 
-const router = createBrowserRouter(list.map(addErrorElement));
+const router = createBrowserRouter(RouteList.map(addErrorElement));
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <CssBaseline />
     <ThemeProvider>
+      <CssBaseline />
       <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>,

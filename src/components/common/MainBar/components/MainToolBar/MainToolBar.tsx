@@ -4,8 +4,9 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { useMainBarContext } from "../../context/utils/useMainDrawerContext";
-import { menuIconButtonTestId, name, title } from "./constants";
+import { menuIconButtonTestId } from "./constants";
 import { ColorModeSwitch } from "./components/ColorModeSwitch/ColorModeSwitch";
+import { personalInformation } from "src/assets/content/personalInformation";
 
 export const MainToolBar = () => {
   const { setDrawerValue } = useMainBarContext();
@@ -23,10 +24,10 @@ export const MainToolBar = () => {
         </Box>
         <Box display={"flex"} flexDirection={"column"} alignItems={"end"}>
           <Typography variant="h5" color="AppWorkspace">
-            {name}
+            {personalInformation.name}
           </Typography>
           <Typography variant="body2" color="white">
-            {title}
+            {personalInformation.title}
           </Typography>
         </Box>
       </Box>

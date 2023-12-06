@@ -20,3 +20,29 @@ export interface ListItemNonIndex extends NonIndexRouteObject {
 }
 
 export type ListItem = ListItemIndex | ListItemNonIndex;
+
+type Enumerate<
+  N extends number,
+  Acc extends number[] = [],
+> = Acc["length"] extends N
+  ? Acc[number]
+  : Enumerate<N, [...Acc, Acc["length"]]>;
+
+export type Range<F extends number, T extends number> = Exclude<
+  Enumerate<T>,
+  Enumerate<F>
+>;
+
+export interface Skill {
+  level: Range<0, 101>;
+  name: string;
+  years?: Range<0, 101>;
+}
+
+export interface RecommendationQuote {
+  by: string;
+  linkToLinkedIn?: string;
+  position: string;
+  relation: string;
+  quote: string;
+}

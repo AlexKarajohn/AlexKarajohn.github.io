@@ -1,8 +1,9 @@
 import { act, render, screen } from "@testing-library/react";
 import { MainToolBar } from "./MainToolBar";
-import { menuIconButtonTestId, name, title } from "./constants";
+import { menuIconButtonTestId } from "./constants";
 import userEvent from "@testing-library/user-event";
 import { mockComponent } from "src/util/testing/mockComponent";
+import { personalInformation } from "src/assets/content/personalInformation";
 const mockSetDrawerValue = jest.fn();
 jest.mock("../../context/utils/useMainDrawerContext", () => ({
   useMainBarContext: () => ({
@@ -21,11 +22,11 @@ describe("MainToolBar", () => {
   });
   it("should render name", () => {
     render(<MainToolBar />);
-    expect(screen.getByText(name)).toBeInTheDocument();
+    expect(screen.getByText(personalInformation.name)).toBeInTheDocument();
   });
   it("should render title", () => {
     render(<MainToolBar />);
-    expect(screen.getByText(title)).toBeInTheDocument();
+    expect(screen.getByText(personalInformation.title)).toBeInTheDocument();
   });
   describe("Menu", () => {
     it("should render a menu button", async () => {
