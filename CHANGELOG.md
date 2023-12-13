@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.10.0...v1.10.1) (2023-12-13)
+
+
+### Bug Fixes
+
+* **jest:** jpg imports ([255394c](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/255394c9edf7fad06d90bba54ec34cbe63e98331))
+
 # [1.10.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.9.0...v1.10.0) (2023-12-13)
 
 
