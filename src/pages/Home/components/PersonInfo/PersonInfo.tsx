@@ -1,6 +1,7 @@
 import { Avatar, Card, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { personalInformation } from "src/assets/content/personalInformation";
+import alexKaraImage from "src/assets/alexkara.jpg";
 
 export const PersonInfo = () => {
   return (
@@ -8,7 +9,7 @@ export const PersonInfo = () => {
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
         <Avatar
           alt={personalInformation.name + "-picture"}
-          src="public/alexkara.jpg"
+          src={alexKaraImage}
           variant="rounded"
           sx={{ width: "100px", height: "100px" }}
         />

@@ -24,7 +24,8 @@
     /* Paths */
     "paths": {
       "@components/*": ["./components"],
-      "src/*": ["*"]
+      "src/*": ["*"],
+      "public/*": ["*"]
     }
   },
   "include": ["src", "./jest-setup.ts"],
