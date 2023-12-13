@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.8.0...v1.9.0) (2023-12-13)
+
+
+### Features
+
+* **page:** added home page ([41be6a5](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/41be6a5c09e2a4b07cff2882abfba300a26815ca))
+
 # [1.8.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.7.2...v1.8.0) (2023-11-28)
 
 
