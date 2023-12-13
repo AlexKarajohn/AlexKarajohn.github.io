@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.10.1...v1.10.2) (2023-12-13)
+
+
+### Bug Fixes
+
+* **png:** public imports for png files ([a5ba5b8](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/a5ba5b81ae3a5844469eb74541e7405c1df63df9))
+
 ## [1.10.1](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.10.0...v1.10.1) (2023-12-13)
 
 
