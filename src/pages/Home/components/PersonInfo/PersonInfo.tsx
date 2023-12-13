@@ -8,7 +8,7 @@ export const PersonInfo = () => {
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
         <Avatar
           alt={personalInformation.name + "-picture"}
-          src="src\assets\alexkara.jpg"
+          src="public/alexkara.jpg"
           variant="rounded"
           sx={{ width: "100px", height: "100px" }}
         />
