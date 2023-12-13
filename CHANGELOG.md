@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.9.0...v1.10.0) (2023-12-13)
+
+
+### Features
+
+* **personalInfo:** added photo ([938055b](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/938055b2f23323549ee3bf3e4f43fe2b9ce1c260))
+
 # [1.9.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.8.0...v1.9.0) (2023-12-13)
 
 
