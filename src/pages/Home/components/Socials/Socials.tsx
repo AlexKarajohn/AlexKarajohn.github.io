@@ -3,6 +3,9 @@ import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import { personalInformation } from "src/assets/content/personalInformation";
 import { socialLinks } from "src/assets/content/socials";
+import linkedInLogo from "src/assets/LI-Logo.png";
+import githubDarkLogo from "src/assets/GitHub_Logo.png";
+import githubLightLogo from "src/assets/GitHub_Logo_White.png";
 
 export const Socials: FC = () => {
   const theme = useTheme();
@@ -23,7 +26,7 @@ export const Socials: FC = () => {
       <Box component={NavLink} to={socialLinks.linkedIn}>
         <IconButton>
           <img
-            src={"src/assets/LI-Logo.png"}
+            src={linkedInLogo}
             width="90px"
             data-testid="linkedin-img"
             alt={personalInformation.name + "-linkedin"}
@@ -34,9 +37,7 @@ export const Socials: FC = () => {
         <IconButton>
           <img
             src={
-              theme.palette.mode === "dark"
-                ? "src/assets/GitHub_Logo_White.png"
-                : "src/assets/GitHub_Logo.png"
+              theme.palette.mode === "dark" ? githubLightLogo : githubDarkLogo
             }
             width="90px"
           />
