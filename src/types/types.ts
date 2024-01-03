@@ -37,6 +37,7 @@ export interface Skill {
   level: Range<0, 101>;
   name: string;
   years?: Range<0, 101>;
+  children?: Partial<Skill>[];
 }
 
 export interface RecommendationQuote {

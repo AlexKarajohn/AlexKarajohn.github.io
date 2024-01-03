@@ -8,13 +8,14 @@ import PreviewIcon from "@mui/icons-material/Preview";
 import HomeIcon from "@mui/icons-material/Home";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import { createElement } from "react";
-import TheaterComedySharpIcon from "@mui/icons-material/TheaterComedySharp";
 import { v4 as uuid } from "uuid";
-import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
-import DirectionsSubwayFilledSharpIcon from "@mui/icons-material/DirectionsSubwayFilledSharp";
 import { Layout } from "../components/Layout/Layout";
-import { Contact } from "src/pages/Contact/Contact";
+// import { Contact } from "src/pages/Contact/Contact";
 import { Home } from "src/pages/Home/Home";
+// import BuildIcon from "@mui/icons-material/Build";
+// import { Skills } from "src/pages/Skills/Skills";
+import { GlobePopulation } from "src/pages/GlobePopulation/GlobePopulation";
+import { CryptoCoin } from "src/pages/CryptoCoins/CryptoCoin";
 
 export const RouteList: ListItem[] = [
   {
@@ -29,67 +30,63 @@ export const RouteList: ListItem[] = [
       </Layout>
     ),
   },
+  // {
+  //   id: uuid(),
+  //   text: "Skills",
+  //   icon: createElement(BuildIcon),
+  //   path: "/skills",
+  //   element: (
+  //     <Layout>
+  //       <Skills />
+  //     </Layout>
+  //   ),
+  // },
   {
     id: uuid(),
     text: "Feature Display",
     icon: createElement(PreviewIcon),
-    path: "/featureDisplay",
-    element: <Layout />,
     children: [
       {
         id: uuid(),
-        text: "First Child",
-        path: "firstChild",
-        element: <>1</>,
-      },
-      {
-        id: uuid(),
-        text: "Second Child",
-        path: "SecondChild",
-        icon: createElement(DirectionsSubwayFilledSharpIcon),
+        text: "D3",
         children: [
           {
             id: uuid(),
-            text: "Seconds Child First Child",
-            icon: createElement(TheaterComedySharpIcon),
-            path: "SecondsChildFirstChild",
-            element: <>SecondsChildFirstChild</>,
+            text: "Globe Population",
+            icon: createElement(ContactPageIcon),
+            path: "/gp",
+            element: (
+              <Layout>
+                <GlobePopulation />
+              </Layout>
+            ),
           },
           {
             id: uuid(),
-            text: "Seconds Child Second Child",
-            children: [
-              {
-                id: uuid(),
-                text: "Seconds Child Seconds Child First Child",
-                icon: createElement(VisibilityRoundedIcon),
-              },
-              {
-                id: uuid(),
-                text: "Seconds Child Seconds Child Second Child",
-              },
-            ],
-          },
-          {
-            id: uuid(),
-            text: "Seconds Child Third Child",
-            icon: createElement(TheaterComedySharpIcon),
+            text: "Crypto Coins",
+            icon: createElement(ContactPageIcon),
+            path: "/cc",
+            element: (
+              <Layout>
+                <CryptoCoin />
+              </Layout>
+            ),
           },
         ],
       },
     ],
   },
-  {
-    id: uuid(),
-    text: "Contact",
-    icon: createElement(ContactPageIcon),
-    path: "/contact",
-    element: (
-      <Layout>
-        <Contact />
-      </Layout>
-    ),
-  },
+  // {
+  //   id: uuid(),
+  //   text: "Contact",
+  //   icon: createElement(ContactPageIcon),
+  //   path: "/contact",
+  //   element: (
+  //     <Layout>
+  //       <Contact />
+  //     </Layout>
+  //   ),
+  // },
 ];
 
 export const skillList: Skill[] = [
@@ -103,6 +100,87 @@ export const skillList: Skill[] = [
   { name: "HTML", level: 90, years: 10 },
   { name: "CSS", level: 70, years: 8 },
   { name: "AWS", level: 50, years: 2 },
+];
+
+export const extensiveSkillset: Partial<Skill>[] = [
+  {
+    name: "Development",
+    children: [
+      {
+        name: "Languages",
+        children: [
+          { name: "Javascript" },
+          { name: "Typescript" },
+          { name: "Terraform" },
+          { name: "HTML5" },
+          { name: "CSS" },
+        ],
+      },
+      {
+        name: "Build",
+        children: [
+          { name: "NextJs" },
+          { name: "Vite" },
+          { name: "Webpack" },
+          { name: "Linters" },
+          { name: "Formatters" },
+        ],
+      },
+      {
+        name: "Single Page Apps",
+        children: [{ name: "ReactJs" }],
+      },
+      {
+        name: "Server(less)-Side",
+        children: [{ name: "NodeJs" }, { name: "Lambda" }],
+      },
+      {
+        name: "Testing",
+        children: [
+          { name: "Jest" },
+          { name: "Playwright" },
+          { name: "Storybook" },
+        ],
+      },
+      {
+        name: "Tools",
+        children: [
+          { name: "Git" },
+          { name: "Visual Studio Code" },
+          { name: "Slack" },
+          { name: "Jira" },
+          { name: "Confluence" },
+          { name: "Figma" },
+          { name: "Browserstack" },
+          { name: "Plop" },
+          { name: "npm" },
+          { name: "yarn" },
+        ],
+      },
+      {
+        name: "Devops",
+        children: [
+          {
+            name: "CI/CD",
+            children: [
+              { name: "Terraform" },
+              { name: "Semantic Versioning" },
+              { name: "Github Actions" },
+              {
+                name: "AWS",
+                children: [
+                  { name: "Route53" },
+                  { name: "S3" },
+                  { name: "Lambdas" },
+                  { name: "Cloudfront" },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export const recommendationsList: RecommendationQuote[] = [
@@ -141,7 +219,7 @@ export const recommendationsList: RecommendationQuote[] = [
   {
     by: "William Runyon",
     linkToLinkedIn: "https://www.linkedin.com/in/william-runyon",
-    position: "Product Manager",
+    position: "Product Manager at Pandologic",
     quote:
       "A natural problem solver and an impressively holistic thinker, Alexandros immerses himself in the “why” of the challenge before applying exhaustive effort in determining the “how.”",
     relation: "Worked with Alexandros on the same team",

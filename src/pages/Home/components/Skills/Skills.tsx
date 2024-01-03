@@ -1,6 +1,6 @@
 import { Skillbar } from "src/components/common/Skillbar/Skillbar";
-import { Box, Card, Divider, Typography } from "@mui/material";
-import { skillList } from "src/components/common/MainBar/asset/list";
+import { Box, Button, Card, Divider, Link, Typography } from "@mui/material";
+import { RouteList, skillList } from "src/components/common/MainBar/asset/list";
 
 export const Skills = () => {
   return (
@@ -23,6 +23,9 @@ export const Skills = () => {
           <Skillbar key={index + skill.name} skill={skill} />
         ))}
       </Box>
+      <Link href={RouteList.find((item) => item.text === "Skills")?.path}>
+        <Button variant="outlined">See more</Button>
+      </Link>
     </Card>
   );
 };
