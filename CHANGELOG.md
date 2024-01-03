@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.10.2...v1.11.0) (2024-01-03)
+
+
+### Features
+
+* **d3:** added d3 examples ([e37570d](https://github.com/AlexKarajohn/AlexKarajohn.github.io/commit/e37570d74e8e2997f988fe3c0b4384d4b5453eb2))
+
 ## [1.10.2](https://github.com/AlexKarajohn/AlexKarajohn.github.io/compare/v1.10.1...v1.10.2) (2023-12-13)
 
 
